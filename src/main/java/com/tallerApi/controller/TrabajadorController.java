@@ -31,7 +31,24 @@ public class TrabajadorController {
 	@PostMapping("/guardar")
 	public ResponseEntity<Object> guardarTrabajador(@RequestBody Trabajador t) {
 		
+//DEBE EXISTIR UNA PERSONA CREADA
+//LO QUE HACE ES CONECTAR LA PERSONA Y LA "CONVIERTE" a trabajador con este json ↓
+		/*{
+		    
+			  "sueldo": 993.5,
+			  "activo" : true,
+			  "area" : "sistemas",
 
+			  "persona" : {
+			      "idPersona": 1,
+			"nombre" : "sergio",
+			"apellido": "silva",
+			"edad" : 25,
+			"dni" : 11122233
+			    }
+			    
+			}*/
+		
 		 traService.guardarTrabajador(t);
 		 log.info("por fin");
 		 return new ResponseEntity<>(HttpStatus.CREATED);
